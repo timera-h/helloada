@@ -1,0 +1,30 @@
+<section class="accueil-candidat">
+    <article class="secteur-activite zoom"><div id="offre-dev-web">Développeuse Web</div></article>
+    <article class="secteur-activite zoom"><a href="">Data Analyst</a></article>
+    <article class="secteur-activite zoom"><a href="">Cyber Sécurité</a></article>
+    <article class="secteur-activite zoom"><a href="">Maintenance Réseau Système Réseau Bureautique</a></article>
+</section>
+
+<div id="offre-emploi">
+    <section class="emploi">
+        <h2 class="emploi-candidat"> Offre d'Emploi</h2>
+        <ul class="all-offres">
+        {{#each entreprises}}
+        <li class="offre-emploi">
+        <h3 class="nom-entreprise">Entreprise: {{this.nomEntreprise}}</h3>
+        {{#each this.offre}}
+        <p class="intitule-poste">Poste: {{this.intitulePoste}}</p>
+        <a href="/accueil-candidat/offres-emploi/{{this._id}}">Voir l'offre</a>
+        {{/each}}
+</li>
+{{/each}}
+</ul>
+    </section>
+
+<span class="separation"></span>
+    <section  class="filtre">
+        <h2 class="emploi-candidat">Filtre</h2> 
+        <h3 class="title">{{offre.intitulePoste}}</h3>
+<p>{{offre.descriptionPoste}}</p>
+    </section>
+</div>

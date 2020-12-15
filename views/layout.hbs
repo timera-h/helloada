@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>{{title}}</title>
+  <meta name="HELLOADA" content="">
+  <meta name="HELLOADA" content="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/css/style.css' />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  {{!-- <script type="module" src="/js/inscription.js"></script> --}}
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  {{#each js}}
+  <script type="module" src="/js/{{this}}.js"></script>
+  <script type="module" src="/js/inscription.js"></script>
+  {{/each}}
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript">
+    $(window).on('scroll', function () {
+      if ($(window).scrollTop()) {
+        $('header').addClass('white');
+      }
+      else {
+        $('header').removeClass('white');
+      }
+    })
+    /*menu button onclick function*/
+    $(document).ready(function () {
+      $('.menu h4').click(function () {
+        $("nav ul").toggleClass("active")
+      })
+    })
+  </script>
+
+<script type="module">
+        const navburger = (() => {
+
+      const btnresponsive = document.querySelector('.burger');
+      //Un objet Element représentant le premier élément dans le document qui corresponde au selecteur css
+      const nav = document.querySelector('.nav-links');
+
+      const navLinks = document.querySelectorAll('.nav-links li');
+
+      btnresponsive.addEventListener('click', () => {
+
+        //     lancera les animation css
+        btnresponsive.classList.toggle('active');
+        nav.classList.toggle('nav-active');
+      });
+    });
+
+    navburger();
+
+  </script>
+
+</head>
+
+<body>
+  <div class="burger"><span class="nav-active"></span></div>
+  <div class="menu-burger">
+    {{#if isNotLoggedIn}}
+    <figure class="logo">
+      <a href="/"><img src="/img/logo.PNG" alt="logo"></a>
+    </figure>
+    {{/if}}
+    {{#if isLoggedIn}}
+    <figure class="logo">
+      <a href="/" class="logo-connecter"><img src="/img/logo-connexion.png" class="logo-img" style="width: 110px;"
+          alt="logo"></a>
+    </figure>
+    {{/if}}
+    <nav id="nav-burger" class="is-active nav-links">
+      <ul id="nav">
+        {{!-- la caracasse front de votre app --}}
+        {{#unless isLoggedIn}}
+        <li class="link-burger"><a href="/signup" class="link is-clickable">S'inscrire</a></li>
+        <li class="link-burger"> <a href="/signin">Connexion Candidat</a></li>
+        <li class="link-burger"> <a href="/signin-entreprise">Connexion Entreprise</a></li>
+        {{/unless}}
+        {{#if isLoggedIn}}
+        <li class="link-burger"><a href="/profile" class="link is-clickable">profile</a></li>
+        {{#if candidatUser}}
+        <li class="link-burger"><a href="/accueil-candidat/offres-emploi" class="link is-clickable">Offre</a></li>
+        {{/if}}
+        {{#if entrepriseUser}}
+        <li class="link-burger"><a href="/accueil-entreprise/profile-candidats" class="link is-clickable">Candidats</a></li>
+        {{/if}}
+        {{#if isAdmin}}
+        <li class="link-burger"><a href="/dashboard" class="link is-clickable">dashboard</a></li>
+        {{/if}}
+        <li class="link-burger"><a href="/signout" class="link is-clickable">Se déconnecter</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+  </div>
+  <header id="header-main">
+
+
+
+
+    {{!-- <li class="link"><a href="/about" class="link is-clickable">about</a></li>
+            <li class="link"><a href="/products" class="link is-clickable">products</a></li>
+            <li class="link"><a href="/contact" class="link is-clickable">contact</a></li> --}}
+
+    {{!-- ------------------------------------------------------------------------------------------------------- --}}
+    {{#if isNotLoggedIn}}
+    <figure class="logo">
+      <a href="/"><img src="/img/logo.PNG" alt="logo"></a>
+    </figure>
+    {{/if}}
+    {{#if isLoggedIn}}
+    <figure>
+      <a href="/" class="logo"><img src="/img/logo-connexion.png" style="width: 150px; margin-top: 30px;"
+          alt="logo"></a>
+    </figure>
+    {{/if}}
+    <nav id="navbar" class="stroke">
+      <ul id="nav" class="">
+        {{#unless isLoggedIn}}
+        <li class="link"><a href="/signup" class="link is-clickable">S'inscrire</a></li>
+        <li class="link"><a href="" class="link is-clickable">Se connecter</a>
+          <ul id="menu-deroulant">
+            <li class="link-deroulant"> <a href="/signin">Candidat</a></li>
+            <li class="link-deroulant"> <a href="/signin-entreprise">Entreprise</a></li>
+          </ul>
+        </li>
+        {{/unless}}
+        {{#if isLoggedIn}}
+        <li class="link"><a href="/profile" class="link is-clickable">profile</a></li>
+        {{#if candidatUser}}
+        <li class="link"><a href="/accueil-candidat/offres-emploi" class="link is-clickable">Offre</a></li>
+        {{/if}}
+        {{#if entrepriseUser}}
+        <li class="link"><a href="/accueil-entreprise/profile-candidats" class="link is-clickable">Candidat</a></li>
+        {{/if}}
+        {{#if isAdmin}}
+        <li class="link"><a href="/dashboard" class="link is-clickable">dashboard</a></li>
+        {{/if}}
+        <li class="link"><a href="/signout" class="link is-clickable">Se déconnecter</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {{> flashMessage}}
+    {{!-- hbs va insérer dans body le contenu du render courant --}}
+    {{{ body }}}
+
+    {{!-- <aside id="aside-reseaux">
+      <ul class="reseaux">
+              <li><a href="https://www.facebook.com/helloadatech/" target="new"><img src="/img/facebook.jpeg"
+                    alt="facebook"></a>
+              </li>
+              <li><a href="https://twitter.com/Helloadatech" target="new"><img src="/img/twitter.jpeg"
+                    alt="twitter"></a></li>
+              <li><a href="https://www.instagram.com/helloadatech/" target="new"><img src="/img/instagram.jpeg"
+                    alt="instagram"></a>
+              </li>
+              <li><a href="https://www.linkedin.com/company/helloada-tech/" target="new">
+                  <img src="/img/linkedin.jpeg" alt="linkedin"></a></li>
+            </ul>
+    </aside> --}}
+  </main>
+  <footer>
+    <section id="footer">
+      <article class="footer">
+
+        <ul>
+          <li> <a href="https://helloada.tech/" target="new">La communaut&eacute; HELLOADA</a></li>
+          <li><a href="mailto:contact@helloada.fr">Contact</a></li>
+        </ul>
+      </article>
+      <article class="footer">
+        <ul>
+          <li><a href="/condition">Conditions d'utilisation</a></li>
+          <li><a href="/mention-legal">Mentions legales</a></li>
+        </ul>
+      </article>
+      <article class="footer">
+        <ul>
+          <li>
+            <ul class="reseaux">
+              <li><a href="https://www.facebook.com/helloadatech/" target="new"><img src="/img/facebook.jpeg"
+                    alt="facebook"></a>
+              </li>
+              <li><a href="https://twitter.com/Helloadatech" target="new"><img src="/img/twitter.jpeg"
+                    alt="twitter"></a></li>
+              <li><a href="https://www.instagram.com/helloadatech/" target="new"><img src="/img/instagram.jpeg"
+                    alt="instagram"></a>
+              </li>
+              <li><a href="https://www.linkedin.com/company/helloada-tech/" target="new">
+                  <img src="/img/linkedin.jpeg" alt="linkedin"></a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </article>
+    </section>
+
+
+    {{!----------------------------- picto aside -------------------------------------- --}}
+
+{{!-- 
+  <ul clasocial-nav.model-0
+  li
+    a.twitter(href='https://twitter.com/vineethtrv')
+      i.fa.fa-twitter
+  li
+    a.facebook(href='https://www.facebook.com/vini.thekingal')
+      i.fa.fa-facebook
+  li
+    a.google-plus(href='https://plus.google.com/u/0/109987289949504261649/posts')
+      i.fa.fa-google-plus
+  li
+    a.linkedin
+      i.fa.fa-linkedin
+  li
+    a.pinterest
+      i.fa.fa-pinterest-p
+br --}}
+
+  </footer>
+</body>
+
+</html>

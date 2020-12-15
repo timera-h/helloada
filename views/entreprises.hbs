@@ -1,0 +1,9 @@
+<h1 class="title">Entreprises</h1>
+<ul class="all-entreprises">
+    {{#each entreprises}}
+    <li class="entreprise-link">
+        <h2>{{this.nomEntreprise}} ({{this.offre.intitulePoste}})</h2>
+        <p>Taille entreprise : {{this.tailleEntreprise}}</p>
+    </li>
+    {{/each}}
+</ul>

@@ -1,0 +1,67 @@
+<h1 class="title">
+    <span>Manager les utilisateurs</span>
+    {{!-- <a href="/dashboard/create-user">
+        <i class="icon fa-sm fas fa-plus"></i>
+    </a> --}}
+</h1>
+<table class="tabler">
+    <thead>
+        <tr class="row">
+            <th class="cell">cv</th>
+            <th class="cell">nom</th>
+            <th class="cell">prenom</th>
+            <th class="cell">metier</th>
+            <th class="cell">typeContrat</th>
+            <th class="cell">ville</th>
+            <th class="cell">codePostale</th>
+            <th class="cell">secteurActiviteFav</th>
+            <th class="cell">langage de programmation</th>
+            <th class="cell">framework</th>
+            <th class="cell">linkedin</th>
+            <th class="cell">mail</th>
+            <th class="cell">role</th>
+            <th class="cell">edit</th>
+            <th class="cell">delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr class="row">
+            <td class="cell cv">
+                <img src="{{this.cv}}" alt="cv de {{this.nom}}">
+            </td>
+            <td class="cell">{{this.nom}}</td>
+            <td class="cell">{{this.prenom}}</td>
+            <td class="cell">{{this.metier}}</td>
+            <td class="cell">{{this.cdi}} <hr> {{this.cdd}} <hr> {{this.ctt}} <hr> {{this.stage}} <hr>
+                {{this.alternance}}</td>
+            <td class="cell">{{this.ville}}</td>
+            <td class="cell">{{this.codePostale}}</td>
+            <td class="cell">{{this.dev}} <hr> {{this.data}} <hr> {{this.cyber}} <hr> {{this.system}} <hr> {{this.maintenance}}<hr> {{this.bureautique}} </td>
+            <td class="cell">{{this.cdiese}} <hr> {{this.c}} <hr> {{this.cplusplus}} <hr> {{this.css}} <hr>
+                {{this.html}} <hr> {{this.go}} <hr> {{this.java}} <hr> {{this.javascript}} <hr> {{this.objectivec}}<hr>
+                {{this.php}} <hr> {{this.python}} <hr> {{this.r}} <hr> {{this.ruby}} <hr> {{this.shell}} <hr>
+                {{this.swift}} <hr> {{this.typescript}} </td>
+
+            <td class="cell">{{this.angularjs}} <hr> {{this.react}} <hr> {{this.vuejs}} <hr> {{this.rubyr}} <hr>
+                {{this.symphony}} <hr> {{this.django}} <hr> {{this.laravel}} <hr> {{this.asp}} <hr> {{this.meteor}}<hr>
+                {{this.spring}} <hr> {{this.electron}} <hr> {{this.flutter}} <hr> {{this.expressjs}} <hr> {{this.cocoa}} </td>
+            <td class="cell">{{this.linkedin}}</td>
+            <td class="cell">{{this.email}}</td>
+            <td class="cell">{{this.role}}</td>
+            <td class="cell">
+                <a href="/dashboard/users/edit/{{this._id}}">
+                    <i class="icon far fa-edit"></i>
+                </a>
+            </td>
+            <td class="cell">
+                <form method="post" action="/users/delete/{{this._id}}">
+                    <button class="is-clickable">
+                        <i class="icon fas fa-trash"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

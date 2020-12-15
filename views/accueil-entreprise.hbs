@@ -1,0 +1,79 @@
+{{!-- <head>
+    <script>
+        const userModel = require("./../models/User");
+const btnDev = document.getElementById("developpeuse-web");
+const btnData = document.getElementById("data-analyst");
+const btnCyber = document.getElementById("cyber-security");
+const btnReseau = document.getElementById("reseau");
+const ulList = document.getElementById("list-candidat-filtre");
+var usersArray = Object.values.userModel;
+// btnDev.onclick = 
+
+
+
+function display(candidats) {
+    ulList.innerHTML = "";
+
+    candidats.forEach((candidat) => {
+        console.log(candidats);
+        ulList.innerHTML += `<li class="li-candidat" 
+        <p>${candidat.users.prenom}</p>
+        <p>${candidat.users.metier}</p>
+        <button class="btn" data-url="${candidat.users}"
+        </li>`;
+
+
+    });
+
+    btnDev.forEach((btn) => (btn.onclick = displayMore));
+}
+
+
+
+
+function displayMore(evt) {
+    const URLOne = evt.target.getAttribute("data-url");
+    ulList.classList.remove("is-hidden");
+    // Appel AJAX pour récupérer les détails du pokemon clické
+    userModel
+        .find(URLOne)
+        .then((res) => {
+            const candidat = res.render("users"); // les infos du pokemon
+            console.log(candidat);
+            details.innerHTML = `
+          <h2 class="title">${candidat.nom}</h2>
+          <p>
+              Weight: ${pokemon.weight}
+              Height: ${pokemon.height}
+          </p>
+          <img src="${candidat.cv}">
+          `;
+        })
+        .catch((err) => console.error(err));
+}
+
+    </script>
+</head> --}}
+
+
+<section class="accueil-entreprise">
+    <article id="devoloppeuse-web" class="secteur-activite secteur-candidat zoom"><a href="">Développeuse Web</a></article>
+    <article id="data-analyst" class="secteur-activite secteur-candidat zoom"><a href="">Data Analyst</a></article>
+    <article id="cyber-security" class="secteur-activite secteur-candidat zoom"><a href="">Cyber Sécurité</a></article>
+    <article id="reseau" class="secteur-activite secteur-candidat zoom"><a href="">Maintenance Réseau Système Réseau Bureautique</a></article>
+</section>
+
+<div id="list-profil">
+    <section class="profil">
+        <h2 class="emploi-candidat"> Liste Profil</h2>
+        <ul id="list-candidat-filtre">
+        
+        </ul>
+    </section>
+
+    <span class="separation"></span>
+
+    <section class="fiche-candidat">
+        <h2 class="emploi-candidat"> Candidat</h2>
+    </section>
+</div>

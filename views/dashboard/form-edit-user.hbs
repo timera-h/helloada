@@ -1,0 +1,14 @@
+    <h1 class="title">Editer l'utilisateur (<span title="{{user._id}}">{{user.prenom}}</span>)</h1>
+
+    <form method="post" action="/users/edit/{{user._id}}" class="form">
+        <h2 class="title">Choisir un role</h2>
+        <div class="flex row">
+            <label for="radio-user" class="is-clickable">user</label>
+            <input id="radio-user" name="role" value="user" type="radio" {{setCheckedbox "user" user.role }}>
+            <label for="radio-editor" class="is-clickable">editor</label>
+            <input id="radio-editor" name="role" value="editor" type="radio" {{setCheckedbox "editor" user.role }}>
+            <label for="radio-admin" class="is-clickable">admin</label>
+            <input id="radio-admin" name="role" value="admin" type="radio" {{setCheckedbox "admin" user.role }}>
+        </div>
+        <button class="btn">ok</button>
+    </form>

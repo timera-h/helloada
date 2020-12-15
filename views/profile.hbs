@@ -1,0 +1,93 @@
+<div class="flex">
+    <h1 class="title">Bienvenue {{currentUser.nom}} {{currentUser.prenom}}</h1>
+</div>
+
+<section class="profile">
+    <h2 class="title">Mon profil</h2>
+    <article>
+        <p> Nom : {{currentUser.nom}} </p>
+        <p>Prénom : {{currentUser.prenom}}</p>
+        <p>Email : {{currentUser.email}}</p>
+        <p>Code Postale : {{currentUser.codePostale}}</p>
+        <p>Ville : {{currentUser.ville}}</p>
+        <p>Secteur d'activité favoris : {{currentUser.secteurActivite}}</p>
+        <p>Métier : {{currentUser.metier}}</p>
+        <p>Type de Contrat : {{currentUser.contrat}}</p>
+        <p>Lien linkedin : {{currentUser.linkedin}}</p>
+    </article>
+</section>
+
+<section class="profile">
+    <h2 class="title">Mon cv</h2>
+    <figure>
+        <img src="{{currentUser.cv}}" alt="mon cv">
+    </figure>
+</section>
+
+<section class="profil-edit">
+    <form method="post" action="/profile/edit/infos/{{currentUser._id}}" class="form" enctype="multipart/form-data">
+        <h2 class="title"><i class="fas fa-user-cog"></i> Mettre à jour votre profil</h2>
+
+
+        <div class="flex-label">
+            <label for="input-email" class="is-clickable">Email</label>
+            <input id="input-email" type="email" class="input" value="{{currentUser.email}}" name="email">
+        </div>
+
+        <div class="flex-label">
+            <label for="input-ville" class="is-clickable">Ville</label>
+            <input id="input-ville" type="text" class="input" value="{{currentUser.ville}}" name="ville">
+        </div>
+
+        <div class="flex-label">
+            <label for="input-codePostale" class="is-clickable">Code postal</label>
+            <input id="input-codePostale" type="text" class="input" value="{{currentUser.codePostale}}"
+                name="codePostale">
+        </div>
+
+        <div class="flex-label">
+            <label for="input-secteurActivite" class="is-clickable">Secteur activité favoris</label>
+            <input id="input-secteurActivite" type="text" class="input" value="{{currentUser.secteurActivite}}"
+                name="secteurActivite">
+        </div>
+
+        <div class="flex-label">
+            <label for="input-metier" class="is-clickable">Métier</label>
+            <input id="input-metier" type="text" class="input" value="{{currentUser.metier}}" name="metier">
+        </div>
+
+        <div class="flex-label">
+            <label for="input-contrat" class="is-clickable">Type de contrat</label>
+            <input id="input-contrat" type="text" class="input" value="{{currentUser.contrat}}" name="contrat">
+        </div>
+
+        <div class="flex-label">
+            <label for="input-linkedin" class="is-clickable">Lien Linkedin</label>
+            <input id="input-linkedin" type="text" class="input" value="{{currentUser.linkedin}}" name="linkedin">
+        </div>
+
+        <div class="flex-label">
+            <label for="input-cv" class="is-clickable">changer de cv
+                <input id="input-cv" type="file" class="input" name="cv"></label>
+        </div>
+
+        <button class="btn">ok</button>
+    </form>
+
+
+    <form method="post" action="/profile/edit/password/{{user._id}}" class="form">
+        <h2 class="title">Mettre à jour votre mdp</h2>
+
+        <div class="flex-label">
+            <label for="input-old-password" class="is-clickable">ancien mot de passe</label>
+            <input id="input-old-password" type="password" class="input" name="oldPassword">
+        </div>
+
+        <div class="flex-label">
+            <label for="input-password" class="is-clickable">nouveau mot de passe</label>
+            <input id="input-password" type="password" class="input" name="password">
+        </div>
+
+        <button class="btn">ok</button>
+    </form>
+</section>
