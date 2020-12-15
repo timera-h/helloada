@@ -1,0 +1,218 @@
+#accueil {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 360px);
+  padding-top: 150px;
+}
+
+.img-accueil img {
+  width: 300px;
+  height: auto;
+
+  margin: 0 30px 300px;
+}
+
+.btn-accueil a {
+  color: var(--color-white);
+  font-size: 30px;
+}
+
+.btn-accueil {
+  color: var(--color-white);
+
+  outline: none;
+}
+
+.d1 {
+  width: 100%;
+  background-color: var(--color-gray-light);
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: fondu 10s ease-in-out infinite both;
+}
+
+@keyframes fondu {
+  0% {
+    background-image: url("/img/slide4.jpeg");
+  }
+
+  33.33% {
+    background-image: url("/img/slide2.jpeg");
+  }
+
+  66.67% {
+    background-image: url("/img/slide5.jpeg");
+  }
+
+  100% {
+    background-image: url("/img/slide1.jpg");
+  }
+}
+
+button.btn-accueil::after {
+  content: "";
+  display: block;
+  height: 0.25rem;
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 8rem);
+  background: #fff;
+  border-radius: 100%;
+
+  filter: blur(1px);
+  opacity: 0.05;
+  background-image: var(--gradien-btn);
+}
+
+button.btn-accueil::before {
+  content: "";
+  display: block;
+  height: 0.25rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 8rem);
+  background: #fff;
+  border-radius: 100%;
+
+  opacity: 0.7;
+  background-image: var(--gradien-btn);
+}
+
+button.btn-accueil span {
+  /* color: transparent; */
+  background-image: var(--gradient-btn-span);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: var(--shadow-btn-span);
+  font-size: 25px;
+  font-weight: 400;
+}
+
+button.btn-accueil {
+  cursor: pointer;
+  position: relative;
+  padding: 2.5rem 7.5rem;
+  border-radius: 3.75rem;
+  line-height: 2.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 250px;
+  height: 70px;
+  border: 1px solid var(--color-1);
+  background-image: var(--gradient-btn-accueil);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .logo-home {
+    background: none;
+  }
+
+  #accueil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh -5vh);
+    padding: 0;
+    margin: auto;
+  }
+
+  .img-accueil img {
+    display: none;
+  }
+  .btn-accueil a {
+    color: var(--color-white);
+    font-size: 18px;
+  }
+
+  .btn-accueil {
+    color: var(--color-white);
+    outline: none;
+  }
+
+  .d1 {
+    background-image: url("/img/slide2.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    animation: inherit;
+  }
+
+  #accueil {
+    margin-top: 100px;
+  }
+
+  #home-main {
+    height: 80vh;
+  }
+
+  button.btn-accueil::after {
+    content: "";
+    display: block;
+    height: 0.25rem;
+    position: absolute;
+    bottom: 0.75rem;
+    /* left: 50%; */
+    transform: translateX(-50%);
+    width: calc(100% - 8rem);
+    background: #fff;
+    border-radius: 100%;
+
+    filter: blur(1px);
+    opacity: 0.05;
+    background-image: var(--gradien-btn);
+  }
+
+  button.btn-accueil::before {
+    content: "";
+    display: block;
+    height: 0.25rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 8rem);
+    background: #fff;
+    border-radius: 100%;
+    opacity: 0.7;
+    background-image: var(--gradien-btn);
+  }
+
+  button.btn-accueil span {
+    background-image: var(--gradient-btn-span);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: var(--shadow-btn-span);
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  button.btn-accueil {
+    cursor: pointer;
+    position: relative;
+    padding: 2.5rem 7.5rem;
+    border-radius: 3.75rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px;
+    width: 250px;
+    height: 70px;
+    border: 1px solid var(--color-1);
+    background-image: var(--gradient-btn-accueil);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

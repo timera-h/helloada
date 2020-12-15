@@ -1,0 +1,19 @@
+:root{
+    --color-1: #3a0ca3;
+    --color-white: white; 
+    --gradient: linear-gradient(304deg, rgba(137, 36, 173, 1) 0%, rgba(58, 12, 163, 1) 25%, rgb(88, 36, 173) 48%,  rgba(58, 12, 163, 1) 62%, rgba(137, 36, 173, 1) 100%) ;
+    --gradient-btn-accueil: linear-gradient(-180deg, var(--color-1) 0%, var(--color-1) 100%);
+    --box-shadow: 0 -0.25rem 1.5rem rgba(24, 15, 155, 0.582) inset,
+        0 0.25rem 0.5rem 0 rgb(84, 70, 207) inset,
+        0 1rem 1.25rem 0 rgba(50, 36, 173, 0.342);
+    --gradien-btn: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+    --gradient-btn-span: linear-gradient(0deg, #9b82ee 0%, #FEFAFD 100%);
+    --shadow-btn-span: drop-shadow(0 2px 2px rgb(36, 0, 102));
+    --color-1bis: rgb(89, 12, 161);
+    --color-black: black;
+    --color-red-google:  rgb(202, 26, 20);
+    --color-bleu-linkedin: #0085b2;
+    --color-gray-light: #EDEDED;
+    --color-grey: grey;
+    --color-grey-check: #dadada;
+}

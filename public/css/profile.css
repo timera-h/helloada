@@ -1,0 +1,141 @@
+.profile, .title{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.flex{
+    margin-top: 100px;
+}
+
+.profile article{
+    width: 50%;
+    margin-bottom: 15px;
+}
+
+.profile figure{
+    width: 20%;
+    height: 500px;
+}
+
+.profile figure img{
+    width: 100%;
+    height: auto;
+}
+
+.profile article p{
+    width: 100%;
+    height: 50px;
+    border: 1px var(--color-grey-light) solid;
+    border-radius: 5px;
+    margin: 3px;
+    border-left: 5px var(--color-1) solid;
+    line-height: 50px;
+    padding-left: 5px;
+}
+
+.title{
+    margin: 10px 0;
+    
+}
+
+.profil-edit .form label{
+   text-align: start;
+   width: 10%;
+}
+
+.profil-edit .flex-label{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+input#input-cv.input{
+    width: 70%;
+}
+
+.profil-edit .flex-label input{
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px){
+    .profile figure{
+        width: 35%;
+        height: 500px;
+    }
+    
+    .profile figure img{
+        width: 100%;
+        height: auto;
+    }
+
+    .profil-edit .form label{
+        text-align: start;
+        width: 20%;
+     }
+}
+
+@media screen and (min-width: 599px) and (max-width: 768px){
+    .profile article{
+        width: 70%;
+        margin-bottom: 15px;
+    }
+
+    section.profile{
+        width: 100%;
+        height: auto;
+    }
+
+    .profile figure{
+        width: 50%;
+        height: 500px;
+    }
+    
+    .profile figure img{
+        width: 100%;
+        height: auto;
+    }
+    .profil-edit .form label{
+        text-align: start;
+        width: 25%;
+     }
+
+}
+
+@media screen and (min-width: 413px) and (max-width: 600px){
+    div.flex{
+        margin-top: 100px;
+    }
+
+    .profile figure{
+        width: 60%;
+        height: 500px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 414px){
+    div.flex{
+        margin-top: 100px;
+    }
+
+    .profile article{
+        width: 85%;
+        margin-bottom: 15px;
+    }
+
+    .profile figure{
+        width: 90%;
+        height: 500px;
+    }
+
+    .profil-edit .form label{
+        text-align: start;
+        width: 25%;
+     }
+}

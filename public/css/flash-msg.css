@@ -1,0 +1,32 @@
+.flash-msg {
+    border-radius: 0.3rem;
+    border: 2px solid;
+    max-width: 300px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto 30px;
+  }
+  
+  .flash-msg.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    box-shadow: -0.3px 0.1px 2.4px 0.1px #721c24;
+  }
+  
+  .flash-msg.warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    box-shadow: -0.3px 0.1px 2.4px 0.1px #856404;
+  }
+  
+  .flash-msg.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    box-shadow: -0.3px 0.1px 2.4px 0.1px #155724;
+  }

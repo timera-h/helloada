@@ -1,0 +1,277 @@
+ .linkedin-img {
+     width: 35px;
+     height: 35px;
+     margin-right: 30px;
+     margin-left: 10px;
+     /* border-radius: 10px; */
+ }
+
+ .google-img {
+     padding: 4px;
+     width: 35px;
+     height: 35px;
+     margin-left: 10px;
+     /* background: white; */
+     margin-right: 30px;
+ }
+
+
+ .connexion h1 {
+     font-weight: 600;
+ }
+
+ .input-connection::placeholder {
+     color: var(--color-black);
+ }
+
+ /* .signin-background{
+ background-image: url(/img/simple-degrade-pink.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+background-size: 400% 400%;
+animation: background 5s ease-in-out infinite;}
+@keyframes background {
+
+    0%,
+    100% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+} */
+
+ .signin-background {
+     min-width: 100%;
+     min-height: 80vh;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-image: url(/img/marbre-rose.jpeg);
+     animation: header 15s linear infinite;
+
+
+ }
+
+ @keyframes header {
+
+     0% {
+         background-position: 0px;
+     }
+
+     100% {
+         background-position: 0px 0px;
+     }
+ }
+
+ .connexion {
+     height: calc(100vh - 300px);
+ }
+
+
+ form.connexion {
+     width: 50%;
+ }
+
+ .form .authentification-rs {
+     display: flex;
+     flex-direction: row;
+     width: 70%;
+     justify-content: center;
+     align-items: center;
+     margin: 2% 0;
+ }
+
+ div.authentification-rs a {
+     width: 30%;
+     height: 40px;
+     display: flex;
+     flex-direction: row;
+     justify-content: start;
+     align-items: center;
+     color: var(--color-white);
+     text-align: center;
+     line-height: 40px;
+     font-weight: 600;
+     border-radius: 10px;
+     margin: 4px;
+ }
+
+ .form .authentification-rs a.linkedin-btn {
+     background: var(--color-bleu-linkedin);
+ }
+
+ .form .authentification-rs a.google-btn {
+     background: var(--color-red-google);
+     /* border: 1px solid var(--color-1) ; */
+ }
+
+ div.trait {
+     display: flex;
+     flex-direction: row;
+     width: 80%;
+     justify-content: center;
+     align-items: center;
+     margin-top: 30px;
+ }
+
+ div.trait hr {
+     width: 30%;
+     height: 1px;
+
+ }
+
+ div.trait-responsive {
+     display: none;
+ }
+
+ /* div.authentification-rs{
+    display: flex;
+    flex-direction: row;
+} */
+
+
+ /* div.authentification-rs span{
+    padding: 30px;
+} */
+ @media screen and (min-width:415px) and (max-width: 1024px) {
+     div.trait-responsive {
+         display: none;
+     }
+
+     form div.authentification-rs {
+         width: 100%;
+         height: 30px;
+         margin-top: 30px;
+     }
+
+     form.connexion {
+         width: 70%;
+     }
+
+     div.authentification-rs a {
+
+         height: 40px;
+         display: flex;
+         flex-direction: row;
+         justify-content: start;
+         align-items: center;
+         color: var(--color-white);
+         line-height: 40px;
+         font-weight: 500;
+         border-radius: 10px;
+         margin: 4px;
+         width: 55%;
+         font-size: 14px;
+     }
+
+     .linkedin-img,
+     .google-img {
+         width: 30px;
+         height: 30px;
+         margin-right: 3px;
+         margin-left: 3px;
+         /* border-radius: 10px; */
+     }
+
+
+     div.trait {
+         display: flex;
+         flex-direction: row;
+         width: 80%;
+         justify-content: center;
+         align-items: center;
+         margin-top: 30px;
+         margin: 4%;
+     }
+
+     div.trait hr {
+         width: 10%;
+         height: 1px;
+
+     }
+ }
+
+ @media screen and (max-width: 414px) {
+
+     form.connexion {
+         width: 100%;
+     }
+
+     .connexion {
+         height: calc(100vh);
+         width: 100%;
+     }
+
+     .form h1.title {
+         font-size: 20px;
+     }
+
+     div.trait {
+         display: none;
+     }
+
+     div.trait-responsive {
+         display: flex;
+         flex-direction: row;
+         width: 80%;
+         justify-content: center;
+         align-items: center;
+         margin: 5%;
+         font-size: 12px;
+     }
+
+     div.trait-responsive hr {
+         width: 20%;
+         height: 1px;
+
+     }
+
+     form div.authentification-rs {
+         width: 100%;
+         height: 30px;
+
+     }
+
+
+
+     div.authentification-rs a {
+
+         height: 40px;
+         display: flex;
+         flex-direction: row;
+         justify-content: start;
+         align-items: center;
+         color: var(--color-white);
+         line-height: 40px;
+         font-weight: 500;
+         border-radius: 10px;
+         margin: 4px;
+         width: 40px;
+         font-size: 14px;
+     }
+
+     .linkedin-img {
+         width: 30px;
+         height: 30px;
+         padding: 0;
+         margin: 2px;
+         /* border-radius: 10px; */
+     }
+
+     .google-img {
+         width: 20px;
+         height: 20px;
+
+         margin: 2px;
+         /* border-radius: 10px; */
+     }
+
+     .text-hidden {
+         display: none;
+     }
+
+
+ }

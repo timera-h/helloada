@@ -1,0 +1,56 @@
+#admin-panel .widget {
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+  }
+  
+  #admin-panel .widget .title .icon {
+    margin-right: 7px;
+  }
+  
+  /* .cv {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    background-size: cover;
+    border: 2px solid;
+    margin: 0 20px 0 0;
+  } */
+  
+  .tabler {
+    min-width: 70vw;
+  }
+  
+  .tabler .cell,
+  .tabler {
+    border: 1px solid;
+    border-collapse: collapse;
+  }
+  
+  .tabler .header {
+    background: var(--color-black);
+    color: whitesmoke;
+  }
+  
+  .tabler .cell {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .tabler .cell.cv img {
+    max-width: 64px;
+  }
+  
+  .tabler .btn {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    height: 22px;
+    width: 22px;
+    border: 1px solid;
+    border-radius: 0.3rem;
+    outline: none;
+  }
+  
+  
