@@ -1,0 +1,78 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+
+  nom: String,
+  prenom: String,
+  metier: String,
+  cdi: String,
+  cdd: String,
+  ctt: String,
+  stage: String,
+  alternance: String,
+  // contrat:String,
+  cdiese: String,
+  c: String,
+  cplusplus: String,
+  css: String,
+  html: String,
+  go: String,
+  java: String,
+  jascript: String,
+  objectivec: String,
+  php: String,
+  python: String,
+  r: String,
+  ruby: String,
+  shell: String,
+  swift: String,
+  typescript: String,
+  ville: String,
+  codePostale: String,
+  dev: String,
+  data: String,
+  cyber: String,
+  system: String,
+  maintenance: String,
+  bureautique: String,
+  angularjs: String,
+  react: String,
+  vuejs: String,
+  rubyr: String,
+  symfony: String,
+  django: String,
+  laravel: String,
+  asp: String,
+  meteor: String,
+  spring: String,
+  electron: String,
+  flutter: String,
+  expressjs: String,
+  cocoa: String,
+  email: String,
+  linkedin: String,
+  password: {
+    min: 4,
+    required: true,
+    type: String,
+  },
+  passwordConfirme: {
+    min: 4,
+    required: true,
+    type: String,
+  },
+  cv: {
+    type: String,
+    default: "https://res.cloudinary.com/demo/image/upload/long_multi_page_pdf",
+  },
+  role: {
+    type: String,
+    enum: ["admin", "editor", "user"],
+    default: "user",
+  },
+});
+
+const userModel = mongoose.model("User", userSchema);
+
+module.exports = userModel;
